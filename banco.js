@@ -13,10 +13,10 @@ switch(accion){
     case 'deposito': {
         deposito()
 
-    }brake;
+    }break;
 
     case 'extraccion':{
         extraccion();
-    }
+    }break;
 }
 

@@ -8,12 +8,20 @@ module.exports= function (){
 
         const monto = process.argv[3];
 
-        fs.appendFile(file, ` ${monto}`, function(err){
-            if(err){
-                console.log('no podés depositar');
-            }else {
-                console.log('Depositaste '+ monto)
-            }
-        });
+        if(monto ===undefined){
+
+            console.log('No aclaraste el monto')
+
+        }else {
+
+            fs.appendFile(file, ` ${monto}`, function(err){
+                if(err){
+                    console.log('no podés depositar');
+                }else {
+                    console.log('Depositaste '+ monto)
+                }
+            });
+            
+        }
     })
 }

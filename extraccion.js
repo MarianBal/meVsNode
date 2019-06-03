@@ -4,16 +4,23 @@ module.exports= function (){
 
     const file = path.join(__dirname, 'banco.txt');
 
-    fs.readFile(file, function(err, data){
+    if(monto ===undefined){
 
-        const monto = process.argv[3];
+        console.log('No aclaraste el monto')
 
-        fs.appendFile(file, ` -${monto}`, function(err){
-            if(err){
-                console.log('no podés extraer');
-            }else {
-                console.log('Extrajiste '+ monto)
-            }
-        });
-    })
+    }else {
+
+        fs.readFile(file, function(err, data){
+
+            const monto = process.argv[3];
+
+            fs.appendFile(file, ` -${monto}`, function(err){
+                if(err){
+                    console.log('no podés extraer');
+                }else {
+                    console.log('Extrajiste '+ monto)
+                }
+            });
+        })
+    }
 }
